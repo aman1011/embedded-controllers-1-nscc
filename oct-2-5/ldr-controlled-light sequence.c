@@ -1,4 +1,3 @@
-
 int brightness = 0;
 int fadeAmount = 4;  // since Analog write values from 0-255, keeping fade as 4 gives 4*60 , values upto 240.
 int led = 6;
@@ -9,6 +8,7 @@ void setup() {
   Serial.begin(9600);
   analogWrite(led, 255);
   delay(2000);
+  analogWrite(led, 0);
 }
 
 // the loop routine runs over and over again forever:
@@ -17,6 +17,7 @@ void loop() {
   int photoResistorValue = analogRead(A0);
   Serial.println("photoresistorvalue");
   Serial.println(photoResistorValue);
+  delay(1000);
   brightness = 0;
 
   if (photoResistorValue < 45) {
@@ -34,5 +35,5 @@ void loop() {
   // Reset to turn off the light, once the sequence finishes.
   analogWrite(5,0);
   brightness = 0;
-  delay(30); //some stability
+  delay(1000); //some stability
 }

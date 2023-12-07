@@ -26,8 +26,9 @@ void loop() {
   int currentHour = now.hour();
   int currentMinute = now.minute();
 
+  // Alarm for 16:06.
   if (currentHour == 16 && currentMinute == 6) {
-    soundBuzzer(3000); // Sound the buzzer at noon (adjust frequency as needed)
+    soundBuzzer(3000); 
   }
 
   delay(1000); // Update the time display every second
